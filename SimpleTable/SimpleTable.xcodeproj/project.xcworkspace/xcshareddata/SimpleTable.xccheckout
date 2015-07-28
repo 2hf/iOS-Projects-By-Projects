@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>44333010-6637-46F7-BF68-5F7A23604A76</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>SimpleTable</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1D93E29CDFCD2F5AE8A8CE07A39C8795D16C006B</key>
 		<string>https://github.com/2hf/iOS-Projects-By-Projects.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SimpleTable/SimpleTable.xcodeproj/project.xcworkspace</string>
+	<string>SimpleTable/SimpleTable.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1D93E29CDFCD2F5AE8A8CE07A39C8795D16C006B</key>
