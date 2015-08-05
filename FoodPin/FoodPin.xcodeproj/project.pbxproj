@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EBB72F21B725DE7008804C3 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBB72F11B725DE7008804C3 /* CustomTableViewCell.swift */; };
 		0EC645AF1B71011800C0EC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC645AE1B71011800C0EC92 /* AppDelegate.swift */; };
 		0EC645B41B71011800C0EC92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EC645B21B71011800C0EC92 /* Main.storyboard */; };
 		0EC645B61B71011800C0EC92 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC645B51B71011800C0EC92 /* Images.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EBB72F11B725DE7008804C3 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0EC645A91B71011800C0EC92 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC645AD1B71011800C0EC92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EC645AE1B71011800C0EC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				0EC645B71B71011800C0EC92 /* LaunchScreen.xib */,
 				0EC645AC1B71011800C0EC92 /* Supporting Files */,
 				0EC645CE1B7102C700C0EC92 /* RestaurantTableVIewController.swift */,
+				0EBB72F11B725DE7008804C3 /* CustomTableViewCell.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EBB72F21B725DE7008804C3 /* CustomTableViewCell.swift in Sources */,
 				0EC645CF1B7102C700C0EC92 /* RestaurantTableVIewController.swift in Sources */,
 				0EC645AF1B71011800C0EC92 /* AppDelegate.swift in Sources */,
 			);
@@ -409,6 +413,7 @@
 				0EC645CA1B71011800C0EC92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EC645CB1B71011800C0EC92 /* Build configuration list for PBXNativeTarget "FoodPinTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				0EC645CD1B71011800C0EC92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
