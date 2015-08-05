@@ -11,7 +11,19 @@ import UIKit
 class RestaurantTableVIewController: UITableViewController {
     
     var restaurantNamesCN = ["仿膳饭庄","全聚德","东来顺","同和居","砂锅居","泰丰居","万福居","阳春居","东兴居","广和居","福兴居","丰泽园","鸿宾楼"]
-    var restaurantNames = ["Cafe Deadend","Homei","Teakha","Cafe Loisl","Petite Oyster","ForKee Restaurant","Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "Thai Cafe"]
+    var restaurantNames = [
+        "Cafe Deadend","Homei","Teakha","Cafe Loisl","Petite Oyster","ForKee Restaurant","Po's Atelier",
+        "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif",
+        "Graham Avenue Meats", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional",
+        "Barrafina", "Donostia", "Royal Oak", "Thai Cafe"
+    ]
+    var restaurantImages = [
+        "cafedeadend.jpg", "homei.jpg", "teakha.jpg", "cafeloisl.jpg",
+        "petiteoyster.jpg", "forkeerestaurant.jpg", "posatelier.jpg", "bourkestreetbakery.jpg",
+        "haighschocolate.jpg", "palominoespresso.jpg", "upstate.jpg", "traif.jpg",
+        "grahamavenuemeats.jpg", "wafflewolf.jpg", "fiveleaves.jpg", "cafelore.jpg",
+        "confessional.jpg", "barrafina.jpg", "donostia.jpg", "royaloak.jpg", "thaicafe.jpg"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +62,7 @@ class RestaurantTableVIewController: UITableViewController {
 //         Configure the cell...want to show traditional Beijing restaurants? Remember to change self.restaurantNamesCN.count above
 //        cell.textLabel?.text = restaurantNamesCN[indexPath.row]
         cell.textLabel?.text = restaurantNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: "restaurant.jpg")
+        cell.imageView?.image = UIImage(named: restaurantImages[indexPath.row])
         return cell
     }
     
