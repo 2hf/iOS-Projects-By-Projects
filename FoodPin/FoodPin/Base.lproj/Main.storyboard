@@ -40,6 +40,12 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationLable" destination="OK9-pZ-4Bf" id="axz-qR-tSz"/>
+                                    <outlet property="nameLabel" destination="DWM-kA-NZJ" id="ipM-h1-Xxx"/>
+                                    <outlet property="thumbnailImageView" destination="rDe-K7-GBN" id="OKu-ni-6VF"/>
+                                    <outlet property="typeLable" destination="XL5-ig-0i1" id="TIT-0O-Ipl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
