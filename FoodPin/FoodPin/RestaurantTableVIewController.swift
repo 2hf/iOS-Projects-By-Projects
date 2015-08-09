@@ -36,6 +36,7 @@ class RestaurantTableVIewController: UITableViewController {
         "American", "American","Breakfast & Brunch", "Coffee & Tea","Coffee &Tea",
         "Latin American", "Spanish", "Spanish","Spanish", "British", "Thai"
     ]
+    var restaurantIsVisited = [Bool](count: 21, repeatedValue: false)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,14 +67,33 @@ class RestaurantTableVIewController: UITableViewController {
         cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
         cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width/2;
         cell.thumbnailImageView.clipsToBounds = true
+        
+        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark: .None
         return cell
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:nil)
+        let callActionHandler = {(action:UIAlertAction!)-> Void in
+            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .Alert)
+            self.presentViewController(alertMessage, animated: true, completion: nil)
+            
+        }
+        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: UIAlertActionStyle.Default, handler: callActionHandler)
+        let isVisitedAction = UIAlertAction(title: "I've been there", style: .Default, handler: {
+            (action: UIAlertAction!) -> Void in
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            cell?.accessoryType = .Checkmark
+            self.restaurantIsVisited[indexPath.row] = true
+        })
+        
+        optionMenu.addAction(callAction)
         optionMenu.addAction(cancelAction)
+        optionMenu.addAction(isVisitedAction)
         self.presentViewController(optionMenu, animated: true, completion: nil)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)//fasle means highlight disappear immediately
     }
     
 
