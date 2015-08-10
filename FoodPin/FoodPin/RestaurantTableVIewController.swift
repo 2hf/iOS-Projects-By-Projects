@@ -88,9 +88,22 @@ class RestaurantTableVIewController: UITableViewController {
             self.restaurantIsVisited[indexPath.row] = true
         })
         
+        let visitedAction = UIAlertAction(title: "You've been there", style: .Default, handler: {
+            (action: UIAlertAction!)-> Void in
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            cell?.accessoryType = .None
+            self.restaurantIsVisited[indexPath.row] = false
+        })
+        
         optionMenu.addAction(callAction)
         optionMenu.addAction(cancelAction)
-        optionMenu.addAction(isVisitedAction)
+        
+        if restaurantIsVisited[indexPath.row] {
+            optionMenu.addAction(visitedAction)
+        }else {
+            optionMenu.addAction(isVisitedAction)
+        }
+        
         self.presentViewController(optionMenu, animated: true, completion: nil)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: false)//fasle means highlight disappear immediately
