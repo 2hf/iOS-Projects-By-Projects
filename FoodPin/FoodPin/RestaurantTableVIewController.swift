@@ -109,6 +109,25 @@ class RestaurantTableVIewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)//fasle means highlight disappear immediately
     }
     
+    //add delete button by override this func
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            self.restaurantImages.removeAtIndex(indexPath.row)
+            self.restaurantNames.removeAtIndex(indexPath.row)
+            self.restaurantTypes.removeAtIndex(indexPath.row)
+            self.restaurantLocations.removeAtIndex(indexPath.row)
+            self.restaurantIsVisited.removeAtIndex(indexPath.row)
+            
+            self.tableView.reloadData();
+            
+        }
+        
+        println("Total item: \(self.restaurantNames.count)")
+        for name in restaurantNames {
+            println(name)
+        }
+    }
+    
 
     
 }
