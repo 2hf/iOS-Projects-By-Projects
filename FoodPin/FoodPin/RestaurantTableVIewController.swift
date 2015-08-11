@@ -77,6 +77,7 @@ class RestaurantTableVIewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:nil)
         let callActionHandler = {(action:UIAlertAction!)-> Void in
             let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .Alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alertMessage, animated: true, completion: nil)
             
         }
@@ -111,23 +112,55 @@ class RestaurantTableVIewController: UITableViewController {
     
     //add delete button by override this func
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+        //using tableView(_:editActionsForRowAtIndexPath) will make code below lose effect
+//        if editingStyle == .Delete {
+//            self.restaurantImages.removeAtIndex(indexPath.row)
+//            self.restaurantNames.removeAtIndex(indexPath.row)
+//            self.restaurantTypes.removeAtIndex(indexPath.row)
+//            self.restaurantLocations.removeAtIndex(indexPath.row)
+//            self.restaurantIsVisited.removeAtIndex(indexPath.row)
+//            
+////            self.tableView.reloadData();
+//            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//            
+//        }
+//        
+//        println("Total item: \(self.restaurantNames.count)")
+//        for name in restaurantNames {
+//            println(name)
+//        }
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share", handler: { (action:UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle:.ActionSheet)
+            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: nil)
+            let facebookAction = UIAlertAction(title: "Facebook", style:UIAlertActionStyle.Default, handler: nil)
+            let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default,handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel,handler: nil)
+            shareMenu.addAction(twitterAction)
+            shareMenu.addAction(facebookAction)
+            shareMenu.addAction(emailAction)
+            shareMenu.addAction(cancelAction)
+            
+            self.presentViewController(shareMenu, animated: true, completion: nil)
+        })
+        
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{ (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             self.restaurantImages.removeAtIndex(indexPath.row)
             self.restaurantNames.removeAtIndex(indexPath.row)
             self.restaurantTypes.removeAtIndex(indexPath.row)
             self.restaurantLocations.removeAtIndex(indexPath.row)
             self.restaurantIsVisited.removeAtIndex(indexPath.row)
             
-            self.tableView.reloadData();
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
-        }
-        
-        println("Total item: \(self.restaurantNames.count)")
-        for name in restaurantNames {
-            println(name)
-        }
+        })
+        shareAction.backgroundColor = UIColor(red: 255.0/255.0, green: 166.0/255.0, blue: 51.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 235.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1.0)
+        return [deleteAction, shareAction]
     }
+
+}
     
 
-    
-}
