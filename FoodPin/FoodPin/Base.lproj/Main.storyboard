@@ -116,17 +116,26 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="isVisited" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-pk-M4b">
+                                <rect key="frame" x="218" y="539" width="60" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xlz-Sf-Qgg" firstAttribute="top" secondItem="g1D-U1-4ZF" secondAttribute="bottom" constant="8" id="1uQ-AV-Nb9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g2F-pk-M4b" secondAttribute="trailing" constant="26" id="5CJ-IG-AO2"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fHF-zl-X7C" secondAttribute="bottom" constant="-5" id="Bef-gF-n2m"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fHF-zl-X7C" secondAttribute="trailing" constant="-16" id="H9L-hW-K1t"/>
+                            <constraint firstItem="g2F-pk-M4b" firstAttribute="top" secondItem="KfX-tW-qWF" secondAttribute="bottom" constant="4.5" id="ITc-Qe-4t6"/>
                             <constraint firstItem="g1D-U1-4ZF" firstAttribute="leading" secondItem="tjR-gK-k2R" secondAttribute="leadingMargin" constant="12" id="LrP-A5-f52"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g1D-U1-4ZF" secondAttribute="trailing" constant="26" id="Lxv-Vz-l0Z"/>
                             <constraint firstItem="GMO-xS-kxj" firstAttribute="top" secondItem="KfX-tW-qWF" secondAttribute="bottom" constant="33" id="N6z-gL-g4J"/>
                             <constraint firstItem="KfX-tW-qWF" firstAttribute="top" secondItem="xlz-Sf-Qgg" secondAttribute="bottom" constant="8" id="PTI-bs-cEz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xlz-Sf-Qgg" secondAttribute="trailing" constant="26" id="SLQ-Xa-7Eu"/>
+                            <constraint firstItem="GMO-xS-kxj" firstAttribute="top" secondItem="g2F-pk-M4b" secondAttribute="bottom" constant="8" id="ZGw-1O-3rz"/>
                             <constraint firstItem="KfX-tW-qWF" firstAttribute="leading" secondItem="tjR-gK-k2R" secondAttribute="leadingMargin" constant="12" id="gAC-0F-PKA"/>
                             <constraint firstItem="xlz-Sf-Qgg" firstAttribute="leading" secondItem="tjR-gK-k2R" secondAttribute="leadingMargin" constant="12" id="gKc-sD-aCj"/>
                             <constraint firstItem="GMO-xS-kxj" firstAttribute="top" secondItem="KfX-tW-qWF" secondAttribute="bottom" constant="33" id="hQb-7d-8be"/>
@@ -140,6 +149,7 @@
                     <navigationItem key="navigationItem" id="NYg-oS-jgm"/>
                     <connections>
                         <outlet property="restaurantImageView" destination="fHF-zl-X7C" id="Evs-Qi-zFe"/>
+                        <outlet property="restaurantIsVisited" destination="g2F-pk-M4b" id="6D2-e5-AVS"/>
                         <outlet property="restaurantLocationView" destination="xlz-Sf-Qgg" id="yFw-Dt-EbC"/>
                         <outlet property="restaurantNameView" destination="g1D-U1-4ZF" id="l3Q-zl-WJS"/>
                         <outlet property="restaurantTypeView" destination="KfX-tW-qWF" id="B6N-tJ-hgg"/>

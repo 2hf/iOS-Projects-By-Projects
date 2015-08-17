@@ -34,6 +34,8 @@ class RestaurantTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,6 +104,11 @@ class RestaurantTableViewController: UITableViewController {
                 destinationController.restaurant = self.restaurants[indexPath.row]
             }
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.hidesBarsOnTap = true//it's not working
     }
 
 }
