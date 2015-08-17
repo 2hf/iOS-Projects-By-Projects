@@ -15,20 +15,15 @@ class DetailViewController: UIViewController {
     @IBOutlet var restaurantLocationView:UILabel!
     @IBOutlet var restaurantTypeView:UILabel!
     
-    var restaurantImage:String!
-    var restaurantName:String!
-    var restaurantLocation:String!
-    var restaurantType:String!
+    var restaurant:Restaurant!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.restaurantImageView.image = UIImage(named: restaurantImage)
-        self.restaurantNameView.text = restaurantName
-        self.restaurantLocationView.text = restaurantLocation
-        self.restaurantTypeView.text = restaurantType
+        self.restaurantImageView.image = UIImage(named: restaurant.image)
+        self.restaurantNameView.text = restaurant.name
+        self.restaurantLocationView.text = restaurant.location
+        self.restaurantTypeView.text = restaurant.type
     }
 
     override func didReceiveMemoryWarning() {

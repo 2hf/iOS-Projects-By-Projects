@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantOOPTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController {
     var restaurants:[Restaurant] = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "Hong Kong",image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Hong Kong", image: "homei.jpg",isVisited: false),
@@ -99,11 +99,7 @@ class RestaurantOOPTableViewController: UITableViewController {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let destinationController = segue.destinationViewController as! DetailViewController
-                destinationController.restaurantImage = self.restaurants[indexPath.row].image
-                destinationController.restaurantLocation = self.restaurants[indexPath.row].location
-                destinationController.restaurantName = self.restaurants[indexPath.row].name
-                destinationController.restaurantType = self.restaurants[indexPath.row].type
-                
+                destinationController.restaurant = self.restaurants[indexPath.row]
             }
         }
     }
