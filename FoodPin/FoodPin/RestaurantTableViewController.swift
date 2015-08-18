@@ -108,7 +108,7 @@ class RestaurantTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.hidesBarsOnTap = true//it's not working
+        self.navigationController?.hidesBarsOnSwipe = true
     }
 
 }
